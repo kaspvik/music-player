@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortify - Musiksortering</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sortify</h1>
+            <p>Din enkla musiksorterare</p>
+        </header>
+
+        <main>
+            <div class="music-browser">
+                <div class="filters">
+                    <h2>Filter</h2>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">Alla låtar</button>
+                        <button class="filter-btn" data-filter="genre">Genrer</button>
+                        <button class="filter-btn" data-filter="artist">Artister</button>
+                    </div>
+                </div>
+
+                <div class="music-lists">
+                    <div class="list-container">
+                        <h2>Musik</h2>
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Sök...">
+                        </div>
+                        <ul id="music-list" class="music-list"></ul>
+                    </div>
+
+                    <div class="selected-list">
+                        <h2>Vald kategori</h2>
+                        <ul id="selected-items" class="selected-items"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playlist-section">
+                <h2>Mina spellistor</h2>
+                <div class="playlist-controls">
+                    <input type="text" id="playlist-name" placeholder="Spellistans namn">
+                    <button id="create-playlist">Skapa spellista</button>
+                </div>
+                <div class="current-playlist">
+                    <h3>Aktuell spellista</h3>
+                    <ul id="current-playlist" class="playlist-items"></ul>
+                    <button id="clear-playlist" class="danger-btn">Rensa spellista</button>
+                </div>
+                <div class="saved-playlists">
+                    <h3>Sparade spellistor</h3>
+                    <ul id="playlists" class="playlists-list"></ul>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Sortify &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
