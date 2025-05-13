@@ -52,5 +52,72 @@ const songsData = [
         title: "Bad Romance",
         artist: "Lady Gaga",
         genre: "Pop"
+    },
+    ,
+    {
+        id: 10,
+        title: "Lose Yourself",
+        artist: "Eminem",
+        genre: "Hip Hop"
+    },
+    {
+        id: 11,
+        title: "99 Problems",
+        artist: "Jay-Z",
+        genre: "Hip Hop"
+    },
+    {
+        id: 12,
+        title: "Nothing Else Matters",
+        artist: "Metallica",
+        genre: "Metal"
+    },
+    {
+        id: 13,
+        title: "Smells Like Teen Spirit",
+        artist: "Nirvana",
+        genre: "Grunge"
+    },
+    {
+        id: 14,
+        title: "Blinding Lights",
+        artist: "The Weeknd",
+        genre: "R&B"
+    },
+    {
+        id: 15,
+        title: "Master of Puppets",
+        artist: "Metallica",
+        genre: "Metal"
+    },
+    {
+        id: 16,
+        title: "Watermelon Sugar",
+        artist: "Harry Styles",
+        genre: "Pop"
+    },
+    {
+        id: 17,
+        title: "Enter Sandman",
+        artist: "Metallica",
+        genre: "Metal"
+    },
+    {
+        id: 18,
+        title: "November Rain",
+        artist: "Guns N' Roses",
+        genre: "Rock"
+    },
+    {
+        id: 19,
+        title: "Sicko Mode",
+        artist: "Travis Scott",
+        genre: "Hip Hop"
+    },
+    {
+        id: 20,
+        title: "Toxic",
+        artist: "Britney Spears",
+        genre: "Pop"
     }
 ];
