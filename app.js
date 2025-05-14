@@ -105,6 +105,59 @@ function renderSelectedItems(type, value) {
     selectedItems.prepend(header);
 }
 
+function addToCurrentPlaylist(song) {
+    const existingItem = Array.from(currentPlaylist.children).find(
+        item => item.dataset.id === song.id.toString()
+    );
+
+    if (!existingItem) {
+        const li = document.createElement('li');
+        li.classList.add('song-item');
+        li.dataset.id = song.id;
+        li.innerHTML = `<strong>${song.title}</strong> - ${song.artist} 
+            <span class="song-genre">${song.genre}</span>
+            <button class="remove-song">Ta bort</button>`;
+
+        const removeBtn = li.querySelector('.remove-song');
+        removeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            li.remove();
+        });
+
+        currentPlaylist.appendChild(li);
+    }
+}
+
+function createPlaylist() {
+    const playlistName = playlistNameInput.value.trim();
+    if (!playlistName) {
+        alert('Vänligen ange ett namn på spellistan');
+        return;
+    }
+
+    if (currentPlaylist.children.length === 0) {
+        alert('Spellistan är tom. Lägg till låtar först.');
+        return;
+    }
+
+    const playlistSongs = Array.from(currentPlaylist.children).map(li => {
+        const songId = parseInt(li.dataset.id);
+        return songsData.find(song => song.id === songId);
+    });
+
+    const newPlaylist = {
+        id: Date.now(),
+        name: playlistName,
+        songs: playlistSongs
+    };
+
+    playlists.push(newPlaylist);
+    savePlaylistsToStorage();
+    renderPlaylists();
+
+    playlistNameInput.value = '';
+    currentPlaylist.innerHTML = '';
+}
 
     init();
 });
