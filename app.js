@@ -74,6 +74,38 @@ function renderArtists(filter = '') {
     });
 }
 
+function renderSelectedItems(type, value) {
+    selectedItems.innerHTML = '';
+    let header = document.createElement('h3');
+
+    if (type === 'genre') {
+        header.textContent = `Genre: ${value}`;
+        const songsByGenre = songsData.filter(song => song.genre === value);
+        songsByGenre.forEach(song => {
+            const li = document.createElement('li');
+            li.classList.add('song-item');
+            li.dataset.id = song.id;
+            li.innerHTML = `<strong>${song.title}</strong> - ${song.artist}`;
+            li.addEventListener('click', () => addToCurrentPlaylist(song));
+            selectedItems.appendChild(li);
+        });
+    } else if (type === 'artist') {
+        header.textContent = `Artist: ${value}`;
+        const songsByArtist = songsData.filter(song => song.artist === value);
+        songsByArtist.forEach(song => {
+            const li = document.createElement('li');
+            li.classList.add('song-item');
+            li.dataset.id = song.id;
+            li.innerHTML = `<strong>${song.title}</strong> - <span class="song-genre">${song.genre}</span>`;
+            li.addEventListener('click', () => addToCurrentPlaylist(song));
+            selectedItems.appendChild(li);
+        });
+    }
+
+    selectedItems.prepend(header);
+}
+
+
     init();
 });
 
