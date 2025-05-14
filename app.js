@@ -216,6 +216,23 @@ function deletePlaylist(playlistId) {
     }
 }
 
+function savePlaylistsToStorage() {
+    localStorage.setItem('sortify-playlists', JSON.stringify(playlists));
+}
+
+function handleSearch() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    musicList.innerHTML = '';
+
+    if (currentFilter === 'all') {
+        renderAllSongs(searchTerm);
+    } else if (currentFilter === 'genre') {
+        renderGenres(searchTerm);
+    } else if (currentFilter === 'artist') {
+        renderArtists(searchTerm);
+    }
+}
+
     init();
 });
 
