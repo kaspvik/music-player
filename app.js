@@ -159,6 +159,64 @@ function createPlaylist() {
     currentPlaylist.innerHTML = '';
 }
 
+function renderPlaylists() {
+    playlistsList.innerHTML = '';
+    if (playlists.length === 0) {
+        const emptyMessage = document.createElement('li');
+        emptyMessage.textContent = 'Inga sparade spellistor än';
+        playlistsList.appendChild(emptyMessage);
+        return;
+    }
+
+    playlists.forEach(playlist => {
+        const li = document.createElement('li');
+        li.innerHTML = `<div class="playlist-info">
+                            <strong>${playlist.name}</strong> 
+                            <span>(${playlist.songs.length} låtar)</span>
+                        </div>
+                        <div class="playlist-actions">
+                            <button class="view-playlist" data-id="${playlist.id}">Visa</button>
+                            <button class="delete-playlist" data-id="${playlist.id}">Ta bort</button>
+                        </div>`;
+
+        const viewBtn = li.querySelector('.view-playlist');
+        viewBtn.addEventListener('click', () => viewPlaylist(playlist.id));
+
+        const deleteBtn = li.querySelector('.delete-playlist');
+        deleteBtn.addEventListener('click', () => deletePlaylist(playlist.id));
+
+        playlistsList.appendChild(li);
+    });
+}
+
+function viewPlaylist(playlistId) {
+    const playlist = playlists.find(p => p.id === playlistId);
+    if (!playlist) return;
+
+    selectedItems.innerHTML = '';
+    const header = document.createElement('h3');
+    header.textContent = `Spellista: ${playlist.name}`;
+    selectedItems.appendChild(header);
+
+    playlist.songs.forEach(song => {
+        const li = document.createElement('li');
+        li.classList.add('song-item');
+        li.dataset.id = song.id;
+        li.innerHTML = `<strong>${song.title}</strong> - ${song.artist}
+                        <span class="song-genre">${song.genre}</span>`;
+        selectedItems.appendChild(li);
+    });
+}
+
+function deletePlaylist(playlistId) {
+    if (confirm('Är du säker på att du vill ta bort denna spellista?')) {
+        playlists = playlists.filter(p => p.id !== playlistId);
+        savePlaylistsToStorage();
+        renderPlaylists();
+    }
+}
+
     init();
 });
+
 
