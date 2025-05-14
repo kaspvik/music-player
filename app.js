@@ -233,6 +233,23 @@ function handleSearch() {
     }
 }
 
+function setupEventListeners() {
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.dataset.filter;
+            renderMusicList();
+        });
+    });
+
+    searchInput.addEventListener('input', handleSearch);
+    createPlaylistBtn.addEventListener('click', createPlaylist);
+
+    clearPlaylistBtn.addEventListener('click', () => {
+        currentPlaylist.innerHTML = '';
+    });
+}
     init();
 });
 
