@@ -1,5 +1,5 @@
-import { renderAllSongs, renderArtists, renderGenres, renderMusicList } from './musicList.js';
-import { clearCurrentPlaylist, createPlaylist } from './playlist.js';
+import { renderAllSongs, renderArtists, renderGenres, renderMusicList } from '/components/musicList.js';
+import { clearCurrentPlaylist, createPlaylist } from '/components/playlist.js';
 
 export function setupEventListeners() {
     const filterButtons = document.querySelectorAll('.filter-btn');

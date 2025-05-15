@@ -1,4 +1,4 @@
-import { savePlaylists } from './storage.js';
+import { savePlaylists } from '/components/storage.js';
 
 export function createPlaylist() {
     const playlistNameInput = document.getElementById('playlist-name');

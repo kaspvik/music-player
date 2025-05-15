@@ -1,7 +1,7 @@
-import { setupEventListeners } from './eventHandlers.js';
-import { renderMusicList } from './musicList.js';
-import { renderPlaylists } from './playlist.js';
-import { loadPlaylists } from './storage.js';
+import { setupEventListeners } from '/components/eventHandlers.js';
+import { renderMusicList } from '/components/musicList.js';
+import { renderPlaylists } from '/components/playlist.js';
+import { loadPlaylists } from '/components/storage.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     window.sortifyApp = {
