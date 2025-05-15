@@ -53,7 +53,6 @@ const songsData = [
         artist: "Lady Gaga",
         genre: "Pop"
     },
-    ,
     {
         id: 10,
         title: "Lose Yourself",

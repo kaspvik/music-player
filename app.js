@@ -19,10 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setupEventListeners();
     }
 
-    function renderMusicList() {
+function renderMusicList() {
     musicList.innerHTML = '';
     if (currentFilter === 'all') {
         renderAllSongs();
+    } else if (currentFilter === 'genre') {
+        renderGenres();
+    } else if (currentFilter === 'artist') {
+        renderArtists();
     }
 }
 
@@ -47,12 +51,16 @@ function renderAllSongs(filter = '') {
 function renderGenres(filter = '') {
     const genres = [...new Set(songsData.map(song => song.genre))];
     const filteredGenres = genres.filter(genre => genre.toLowerCase().includes(filter.toLowerCase()));
+    
+    const genreHeader = document.createElement('h3');
+    genreHeader.textContent = 'Genrer';
+    musicList.appendChild(genreHeader);
+    
     filteredGenres.forEach(genre => {
         const li = document.createElement('li');
         li.classList.add('genre-item');
         li.textContent = genre;
         li.addEventListener('click', () => {
-            currentCategory = genre;
             renderSelectedItems('genre', genre);
         });
         musicList.appendChild(li);
@@ -62,12 +70,16 @@ function renderGenres(filter = '') {
 function renderArtists(filter = '') {
     const artists = [...new Set(songsData.map(song => song.artist))];
     const filteredArtists = artists.filter(artist => artist.toLowerCase().includes(filter.toLowerCase()));
+    
+    const artistHeader = document.createElement('h3');
+    artistHeader.textContent = 'Artister';
+    musicList.appendChild(artistHeader);
+    
     filteredArtists.forEach(artist => {
         const li = document.createElement('li');
         li.classList.add('artist-item');
         li.textContent = artist;
         li.addEventListener('click', () => {
-            currentCategory = artist;
             renderSelectedItems('artist', artist);
         });
         musicList.appendChild(li);

@@ -186,3 +186,32 @@ button:hover {
       flex-direction: column;
   }
 }
+
+.genre-item, .artist-item {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.genre-item:hover, .artist-item:hover {
+    background-color: #e0e0e0;
+}
+
+#music-list h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.genre-item {
+    border-left: 4px solid #4CAF50;
+}
+
+.artist-item {
+    border-left: 4px solid #2196F3;
+}
