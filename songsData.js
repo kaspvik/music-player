@@ -118,5 +118,89 @@ const songsData = [
         title: "Toxic",
         artist: "Britney Spears",
         genre: "Pop"
+    },
+    {
+        id: 21,
+        title: "Lose Control",
+        artist: "Missy Elliott",
+        genre: "Hip Hop"
+    },
+    {
+        id: 22,
+        title: "Rolling in the Deep",
+        artist: "Adele",
+        genre: "Pop"
+    },
+    {
+        id: 23,
+        title: "Zombie",
+        artist: "The Cranberries",
+        genre: "Rock"
+    },
+    {
+        id: 24,
+        title: "Back in Black",
+        artist: "AC/DC",
+        genre: "Rock"
+    },
+    {
+        id: 25,
+        title: "Crazy in Love",
+        artist: "Beyoncé",
+        genre: "R&B"
+    },
+    {
+        id: 26,
+        title: "Umbrella",
+        artist: "Rihanna",
+        genre: "Pop"
+    },
+    {
+        id: 27,
+        title: "Lose Yourself to Dance",
+        artist: "Daft Punk",
+        genre: "Electronic"
+    },
+    {
+        id: 28,
+        title: "Take On Me",
+        artist: "a-ha",
+        genre: "Pop"
+    },
+    {
+        id: 29,
+        title: "I Will Always Love You",
+        artist: "Whitney Houston",
+        genre: "Pop"
+    },
+    {
+        id: 30,
+        title: "Rolling in the Deep",
+        artist: "Adele",
+        genre: "Pop"
+    },
+    {
+        id: 31,
+        title: "Lose Yourself",
+        artist: "Eminem",
+        genre: "Hip Hop"
+    },
+    {
+        id: 32,
+        title: "Born to Run",
+        artist: "Bruce Springsteen",
+        genre: "Rock"
+    },
+    {
+        id: 33,
+        title: "Shake It Off",
+        artist: "Taylor Swift",
+        genre: "Pop"
+    },
+    {
+        id: 34,
+        title: "Lose Yourself to Dance",
+        artist: "Daft Punk",
+        genre: "Electronic"
     }
 ];
