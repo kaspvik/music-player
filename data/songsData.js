@@ -174,12 +174,6 @@ const songsData = [
         genre: "Pop"
     },
     {
-        id: 30,
-        title: "Rolling in the Deep",
-        artist: "Adele",
-        genre: "Pop"
-    },
-    {
         id: 31,
         title: "Lose Yourself",
         artist: "Eminem",
