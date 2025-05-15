@@ -101,7 +101,7 @@ h1, h2, h3 {
 }
 
 .music-list li:hover, .selected-items li:hover, .playlist-items li:hover {
-  background-color: #f5f5f5;
+  background-color: #4CAF50;
 }
 
 .music-list li:last-child, .selected-items li:last-child, .playlist-items li:last-child {
@@ -214,4 +214,38 @@ button:hover {
 
 .artist-item {
     border-left: 4px solid #2196F3;
+}
+
+.music-footer {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: text-decoration 0.2s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  font-size: 14px;
+  opacity: 0.9;
 }
